@@ -1,0 +1,41 @@
+{
+  "shelf_life": {
+    "RGB camera only": {
+      "mae_days": 0.6012645752216403,
+      "early_warning": 0.033602150537634407,
+      "false_flag": 0.012539184952978056
+    },
+    "RGB + NIR (multispectral)": {
+      "mae_days": 0.40961068741792134,
+      "early_warning": 0.4717741935483871,
+      "false_flag": 0.003134796238244514
+    },
+    "TaazaScan: RGB + NIR + temperature history": {
+      "mae_days": 0.4085495109549608,
+      "early_warning": 0.4798387096774194,
+      "false_flag": 0.001567398119122257
+    }
+  },
+  "hidden_bruise": {
+    "RGB camera only": {
+      "auc_pre_visual": 0.517331316551002
+    },
+    "NIR (multispectral)": {
+      "auc_pre_visual": 0.8486369829336677
+    }
+  },
+  "store": {
+    "Today: FIFO, throw away when visibly spoiled": {
+      "waste_pct": 0.0966739198010569,
+      "value_recovered_pct": 0.8782200543486831
+    },
+    "RGB camera: FEFO + markdown": {
+      "waste_pct": 0.030395405345703556,
+      "value_recovered_pct": 0.9434372748897445
+    },
+    "TaazaScan: multispectral FEFO + markdown + juice route": {
+      "waste_pct": 0.01790178571428572,
+      "value_recovered_pct": 0.913254200610998
+    }
+  }
+}
