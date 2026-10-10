@@ -61,11 +61,12 @@ flowchart LR
 
 | File | What it does |
 |---|---|
-| `taazascan/sim.py` | Physics-based ripening simulator: internal degradation, Q10 temperature effect, hidden bruises. Also generates simulated RGB and NIR sensor features. |
-| `run_experiments.py` | Trains the shelf-life and bruise models, then runs a 30-day store simulation. Reproduces every number in our deck (a few seconds). |
-| `make_chart.py` | Draws `results/waste.png` |
-| `results/metrics.json` | All results |
-| `docs/` | The proposal deck (PDF) |
+| `sim.py` | Physics-based ripening simulator (internal degradation, Q10 temperature effect, hidden bruises) + simulated RGB / NIR sensor features |
+| `run_experiments.py` | Trains the shelf-life and bruise models and runs a 30-day store simulation. Reproduces every number in our deck (a few seconds). |
+| `make_chart.py` | Draws `waste.png` |
+| `metrics.json` | All results |
+| `waste.png` | Store-waste chart |
+| `TaazaScan_NeuralLens_PS4.pdf` | The proposal deck |
 
 ```bash
 pip install -r requirements.txt
@@ -92,7 +93,7 @@ The store simulation runs for 30 days at 30 °C, with 200 fruits arriving per da
 | RGB camera + our decision engine | 3.0 % |
 | **TaazaScan: NIR + our decision engine** | **1.8 % (−81 % vs today)** |
 
-![waste](results/waste.png)
+![waste](waste.png)
 
 There's one honest caveat. In our simple store model, the RGB-plus-decision policy recovered slightly more ₹ value (94 % vs 91 %), because it discounts less often. Tuning when to discount, using real sell-through data, is future work. Even so, the decision engine on its own delivers a large share of the benefit, and NIR roughly halves the waste that's left.
 

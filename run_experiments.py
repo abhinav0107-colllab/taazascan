@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.ensemble import HistGradientBoostingRegressor, HistGradientBoostingClassifier
 from sklearn.metrics import mean_absolute_error, roc_auc_score
 
-from taazascan.sim import (FEATURE_SETS, FRUITS, build_dataset, make_fruits, observe,
+from sim import (FEATURE_SETS, FRUITS, build_dataset, make_fruits, observe,
                            true_remaining_days)
 
 train, test = build_dataset(12000, seed=1), build_dataset(5000, seed=2)
@@ -85,4 +85,4 @@ for sec, d in res.items():
     print(f"== {sec}")
     for k, v in d.items():
         print(f"  {k:55s} " + "  ".join(f"{m}={x:.3f}" for m, x in v.items()))
-json.dump(res, open("results/metrics.json", "w"), indent=2)
+json.dump(res, open("metrics.json", "w"), indent=2)
